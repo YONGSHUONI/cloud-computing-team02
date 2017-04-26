@@ -26,6 +26,26 @@
 	User a = (User)session.getAttribute("currentSessionUser");
 	String username = a.getUsername();
 %>
+<%@ page import="cloud.clouddb.cloud_app.*, java.util.*" %>
+<% 
+	session = request.getSession(); 
+	Collection<App> allApps = (ArrayList<App>)session.getAttribute("allApps");
+	
+	/* ArrayList<String> appnames = new ArrayList<String>();
+	ArrayList<String> appurls = new ArrayList<String>();
+	
+	for(int i=0;i<apps_col.size();i++)
+	{
+		if(it.hasNext())
+		{
+			appnames.add(i, it.next().getApp_name());
+			appurls.add(i, it.next().getApp_name());
+		}
+	} */
+	
+%>
+
+
 
 </head>
 <body> 
@@ -96,7 +116,6 @@
 					
 									</div>
 								</div>
-							
 						</li>
 						<li class="hover-effect"><a href="apps.jsp">Apps Center</a></li>
 						<li class="hover-effect"><a href="about.jsp">About</a></li>
@@ -182,7 +201,23 @@
 		<button style="float: right; z-index: 999; font-size: 14px; width: 150px; height: 40px; margin-right: 10px; border:2px solid #E91E63; background: #E91E63; border-radius: 5px; color: #FFF;">Add Your apps</button>
 		</div>
 		<div style="clear: both;"></div>
-		<div class="col-md-3 new-grid-w3l view view-eighth">
+		
+		<%
+			Iterator<App> it=allApps.iterator();
+			while(it.hasNext()){
+				App curApp = it.next();
+				out.println("<div class='col-md-3 new-grid-w3l view view-eighth'>");
+				out.println("<img src='images/ng4.jpg' alt=' ' />");
+				out.println("<div class='mask'>");
+				out.println("<a href='single.html'><h4>Click here</h4></a>");
+				out.println("<p>"+curApp.getApp_name()+"</p>");
+				out.println("<p>use times: "+curApp.getUse_times()+"</p>");
+				out.println("<p>use times: "+curApp.getPrice()+"</p>");
+				out.println("</div></div>");
+			}
+		%>
+		
+		<!-- <div class="col-md-3 new-grid-w3l view view-eighth">
 			<img src="images/ng4.jpg" alt=" " />
 			<div class="mask">
 				<a href="single.html"><h4>Click here</h4></a>
@@ -237,7 +272,9 @@
 				<a href="single.html"><h4>Click here</h4></a>
 				<p>Please start to experience it</p>
 			</div>
-		</div>
+		</div> -->
+		
+		
 		<div class="clearfix"></div>
 		<a href="#" class="more-click">More >></a>
 	</div>
