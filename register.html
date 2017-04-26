@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Register</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="" />
+<link href="images/cloud.ico" rel="icon" type="image/x-icon">
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- font -->
+<link href='http://fonts.googleapis.com/css?family=Josefin+Sans:400,100,100italic,300,300italic,400italic,600,600italic,700,700italic' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+<!-- font -->
+<!-- css -->
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />	
+<!--css -->
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.js"></script>
+</head>
+<body style="background-color: #262c54;"> 
+<div class="sub-banner">
+		<!-- Navbar -->
+		<nav class="navbar navbar-default">
+			<div class="container">
+				<div class="navbar-header">
+					<a  href="index.html"><h1>Cloud Computing</h1></a>
+				</div>
+			</div>
+		</nav>
+</div>
+
+<div class="register">
+	<div class="container">
+		<h2 style="color: #fFF;">User Register</h2>
+		<div class="col-md-8 col-md-offset-2 register-Info">
+			<form action="../RegisterServlet" method="post">
+				<label>Userame :</label>
+				<input type="text" class="text" id="Username" name="Username" placeholder="Username">
+				<label>Password :</label>
+				<input type="password" class="text" id="Password" name="Password" placeholder="Password">
+				<label>Confirm Password :</label>
+				<input type="password" class="text" id="ConfirmPassword" name="ConfirmPassword" placeholder="Confirm Password">
+				<label>First Name :</label>
+				<input type="text" class="text" id="FirstName" name="FirstName" placeholder="First Name">
+				<label>Last Name :</label>
+				<input type="text" class="text" id="LastName" name="LastName" placeholder="Last Name">
+				<label>E-mail :</label>
+				<input type="text" class="text" id="Email" name="Email" placeholder="Email">
+				<input type="submit" class="submit_btn" value="Register">
+			</form>
+		</div>
+		<div class="clearfix"></div>
+	</div>
+</div>
+
+<!-- footer -->
+<div class="footer">
+	<div class="container">
+		<div class="clearfix"></div>
+		<div class="copyright" style="border-top: 1px dashed #FFF;" >
+			<p style="color: #FFF;">Copyright &copy; 2017.Cloud Computing Team 02 All rights reserved.</p>
+		</div>
+	</div>
+</div>
+<!-- //footer -->
+</body>
+</html>
