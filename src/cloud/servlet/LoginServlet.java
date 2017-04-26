@@ -103,6 +103,7 @@ public class LoginServlet extends HttpServlet {
 			out.println("<html><body>");
 			out.println("The username is already exist!");
 			out.println("</body></html>");
+			
 		}
 	}
 
