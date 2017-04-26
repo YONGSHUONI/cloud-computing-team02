@@ -64,12 +64,10 @@ public class AccountServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		User user =new User();
 		user=(User)request.getSession().getAttribute("currentSessionUser");
-		//user.setUsername(request.getParameter("username")); 
-		//user.setId(Integer.parseInt(request.getParameter("id")));
 		AccountDAO accountdao= new AccountDAO();
 		if(accountdao.addDia(Double.parseDouble(request.getParameter("diamond").toString()), user))
 		{
-			String url = "../../../CloudServer/platform/index.jsp?diamond="+ URLEncoder.encode(request.getParameter("diamond"),"UTF-8");
+			String url = "../../../CloudServer/platform/index.jsp";//?Username="+ URLEncoder.encode(request.getParameter("diamond"),"UTF-8");
 			
 			
 			response.sendRedirect(url);
@@ -77,7 +75,8 @@ public class AccountServlet extends HttpServlet {
 		}
 		else
 		{
-			String url = "../../../CloudServer/platform/index.jsp?diamond="+ URLEncoder.encode(request.getParameter("diamond"),"UTF-8");
+			String url = "../../../CloudServer/platform/index.jsp";//?Username="+ URLEncoder.encode(request.getParameter("diamond"),"UTF-8");
+			
 			
 			response.sendRedirect(url);
 			System.out.println("fail");
