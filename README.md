@@ -2,3 +2,4 @@
 Cloud computing group assignment
 team224032017
 143.167.9.237
+mysql -uroot -pteam2
